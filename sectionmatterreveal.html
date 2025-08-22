@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accordion Effect</title>
+<style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+ }
+ .accordion-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ }
+ .accordion-item {
+  border-bottom: 1px solid #ddd;
+ }
+ .accordion-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  outline: none;
+  transition: background-color 0.3s ease;
+ }
+ .accordion-header:hover {
+  background-color: #45a049;
+ }
+ .accordion-content {
+  padding: 15px;
+  background-color: #f9f9f9;
+  display: none;
+  font-size: 1rem;
+ }
+ .active .accordion-content {
+  display: block;
+ }
+ .active .accordion-header {
+  background-color: #3e8e41;
+ }
+</style>
+</head>
+<body>
+  <div class="accordion-container">
+    <div class="accordion-item">
+      <button class="accordion-header">Section 1</button>
+      <div class="accordion-content">
+        <p>This is the content of the first section. You can add any content here.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">Section 2</button>
+      <div class="accordion-content">
+        <p>This is the content of the second section. You can customize the text, add images, or whatever you'd like.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">Section 3</button>
+      <div class="accordion-content">
+        <p>This is the content of the third section. All sections are collapsible!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const accHeaders = document.querySelectorAll('.accordion-header');
+
+    accHeaders.forEach(header => {
+      header.addEventListener('click', function () {
+        const item = this.parentElement;
+
+        // Toggle the active class to show/hide the content
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
