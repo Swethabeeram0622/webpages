@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Cards</title>
+<style>
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+  body {
+   font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #f0f0f0;
+  }
+  .card-container {
+   display: flex;
+   gap: 30px;
+  }
+  .card {
+   background-color: white;
+   padding: 20px;
+   width: 220px;
+   text-align: center;
+   border-radius: 10px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+  }
+  .card img {
+   width: 100%;
+   border-radius: 8px;
+  }
+  .card h2 {
+   margin: 15px 0;
+   font-size: 1.2rem;
+  }
+  .card p {
+   font-size: 0.9rem;
+   color: #666;
+  }
+  .card:hover {
+   transform: translateY(-10px) scale(1.05);
+   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Card 1">
+      <h2>Card 1</h2>
+      <p>Description for card 1.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Card 2">
+      <h2>Card 2</h2>
+      <p>Description for card 2.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Card 3">
+      <h2>Card 3</h2>
+      <p>Description for card 3.</p>
+    </div>
+  </div>
+</body>
+</html>
