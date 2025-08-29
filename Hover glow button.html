@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hover Glow Effect</title>
+<style>
+ body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   font-family: Arial, sans-serif;
+  }
+ /* Styling for the button */
+ button {
+   padding: 15px 30px;
+   font-size: 20px;
+   background-color: #3498db;
+   color: white;
+   border: 2px solid #3498db;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: all 0.4s ease; /* Smooth transition for glow */
+  }
+ /* Hover glow effect */
+ button:hover {
+   background-color: white;
+   color: #3498db;
+   box-shadow: 0 0 15px 5px rgba(52, 152, 219, 0.7); /* Glowing effect */
+   transform: scale(1.1); /* Slightly increase size */
+  }
+</style>
+</head>
+<body>
+  <button>Hover Me!</button>
+</body>
+</html>
