@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hover Ripple Effect</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  button {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden; /* Hide the ripple effect outside the button */
+    font-family: Arial, sans-serif;
+  }
+  /* Style for the ripple effect */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: ripple-animation 0.6s linear;
+    transform: scale(0);
+    pointer-events: none; /* Prevent ripple from blocking button clicks */
+  }
+  /* Keyframes for the ripple animation */
+  @keyframes ripple-animation {
+   to {
+    transform: scale(4);
+    opacity: 0;
+   }
+  }
+</style>
+</head>
+<body>
+ <!-- The button with hover ripple effect -->
+ <button class="ripple-button">click here</button>
+ <script>
+  // JavaScript to trigger the ripple effect
+  const button = document.querySelector('.ripple-button');
+    button.addEventListener('click', function (e) {
+      const rect = button.getBoundingClientRect();
+      const ripple = document.createElement('span');  // Create a new span for the ripple
+      const size = Math.max(rect.width, rect.height); // Calculate the size of the ripple
+      const x = e.clientX - rect.left - size / 2;     // Get x-coordinate for ripple position
+      const y = e.clientY - rect.top - size / 2;      // Get y-coordinate for ripple position
+
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      ripple.classList.add('ripple');
+      button.appendChild(ripple);
+
+      // Remove the ripple after animation completes
+      ripple.addEventListener('animationend', () => {
+      ripple.remove();
+      });
+  });
+ </script>
+</body>
+</html>
